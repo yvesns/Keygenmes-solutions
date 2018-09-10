@@ -3,8 +3,6 @@
 
 Solutions to some keygenmes and crackmes.
 
-Keygen1
-"CrackMe v1.0" by Cruehead / MiB
+Keygen1 - "CrackMe v1.0" by Cruehead / MiB
 
-Password1
-"Encrypted Password Crackme [#4]" by TDC
+Password1 - "Encrypted Password Crackme [#4]" by TDC
