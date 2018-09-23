@@ -165,91 +165,91 @@ GetCodeAsChar proc code:BYTE
 GetCodeAsChar endp
 
 TransformResult proc code:DWORD
-	PUSHAD
+	pushad
 	
-	MOV ECX,result3
-	MOV EBX,result2
-	MOV EAX,result1
+	mov ecx,result3
+	mov ebx,result2
+	mov eax,result1
 	
 	.if code == 1
-		ADD ECX,54Bh
-		IMUL EBX,EAX
-		XOR EAX,ECX
+		add ecx,54Bh
+		imul ebx,eax
+		xor eax,ecx
 	.elseif code == 2
-		SUB ECX,233h
-		IMUL EBX,EBX,14h
-		ADD ECX,EAX
-		AND EBX,EAX
+		sub ecx,233h
+		imul ebx,ebx,14h
+		add ecx,eax
+		and ebx,eax
 	.elseif code == 3
-		ADD EAX,582h
-		IMUL ECX,ECX,16h
-		XOR EBX,EAX
+		add eax,582h
+		imul ecx,ecx,16h
+		xor ebx,eax
 	.elseif code == 4
-		AND EAX,EBX
-		SUB EBX,111222h
-		XOR ECX,EAX
+		and eax,ebx
+		sub ebx,111222h
+		xor ecx,eax
 	.elseif code == 5
 		.if eax == 80000000h
 			xor eax,eax
 		.endif
 	
-		CDQ
+		cdq
 		
 		.if ecx > 0
-			IDIV ECX
+			idiv ecx
 		.endif
 		
-		SUB EBX,EDX
-		ADD EAX,ECX
+		sub ebx,edx
+		add eax,ecx
 	.elseif code == 6
-		XOR EAX,ECX
-		AND EBX,EAX
-		ADD ECX,546879h
+		xor eax,ecx
+		and ebx,eax
+		add ecx,546879h
 	.elseif code == 7
-		SUB ECX,25FF5h
-		XOR EBX,ECX
-		ADD EAX,401000h
+		sub ecx,25FF5h
+		xor ebx,ecx
+		add eax,401000h
 	.elseif code == 8
-		XOR EAX,ECX
-		IMUL EBX,EBX,14h
-		ADD ECX,12589h
+		xor eax,ecx
+		imul ebx,ebx,14h
+		add ecx,12589h
 	.elseif code == 9
-		SUB EAX,542187h
-		SUB EBX,EAX
-		XOR ECX,EAX
+		sub eax,542187h
+		sub ebx,eax
+		xor ecx,eax
 	.elseif code == 0Ah
 		.if eax == 80000000h
 			xor eax,eax
 		.endif
 	
-		CDQ
+		cdq
 		
 		.if ebx > 0
-			IDIV EBX
+			idiv ebx
 		.endif
 		
-		ADD EBX,EDX
-		IMUL EAX,EDX
-		XOR ECX,EDX
+		add ebx,edx
+		imul eax,edx
+		xor ecx,edx
 	.elseif code == 0Bh
-		ADD EBX,1234FEh
-		ADD ECX,2345DEh
-		ADD EAX,9CA4439Bh
+		add ebx,1234FEh
+		add ecx,2345DEh
+		add eax,9CA4439Bh
 	.elseif code == 0Ch
-		XOR EAX,EBX
-		SUB EBX,ECX
-		IMUL ECX,ECX,12h
+		xor eax,ebx
+		sub ebx,ecx
+		imul ecx,ecx,12h
 	.elseif code == 0Dh
-		AND EAX,12345678h
-		SUB ECX,65875h
-		IMUL EBX,ECX
+		and eax,12345678h
+		sub ecx,65875h
+		imul ebx,ecx
 	.elseif code == 0Eh
-		XOR EAX,55555h
-		SUB EBX,587351h
+		xor eax,55555h
+		sub ebx,587351h
 	.else
-		ADD EAX,EBX
-		ADD EBX,ECX
-		ADD ECX,EAX
+		add eax,ebx
+		add ebx,ecx
+		add ecx,eax
 	.endif
 	
 	mov result1,eax
