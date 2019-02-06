@@ -1,0 +1,7 @@
+LIBRARY Misc
+EXPORTS ClipString
+EXPORTS AsciiDecimalToHex
+EXPORTS HexToAsciiDecimal
+EXPORTS ConcatStrings
+EXPORTS ReverseString
+EXPORTS Pow
